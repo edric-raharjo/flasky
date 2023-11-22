@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>KERANG AJAIB</title>
+        <link rel = "stylesheets" href= "{{ url_for('static',filename='styles.css') }}">
+    </head>
+    <body>
+        <form action="{{ url_for("login") }}" method="POST">
+            <input type = "text" name="nm">
+            <input type = "submit" value="submit">
+        </form>
+
+    </body>
+</html>
