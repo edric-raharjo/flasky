@@ -44,13 +44,11 @@ def generate_random(name = None):
 
 @app.route("/<name>")
 def random_heresy(name = None):
-    return f"""
-<p> {generate_random(name)} </p>
-"""
+    return render_template("kerang.html", kataAjaib = f"{generate_random((name))}")
 
 @app.route('/success/<name>')
 def success(name):
-    return f"<p> {generate_random(name)} </p>"
+    return render_template("kerang.html", kataAjaib = f"{generate_random((name))}")
 
 @app.route("/login/", methods = ["POST", "GET"])
 def login():
