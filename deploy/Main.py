@@ -5,11 +5,6 @@ import logging
 app = Flask(__name__, template_folder="templates", static_folder="static")
 # app.config["DEBUG"] = True  
 
-if app.config["LOG_WITH_GUNICORN"]:
-    gunicorn_error_logger = logging.getLogger("gunicorn.error")
-    app.logger.handlers.extend(gunicorn_error_logger.handlers)
-    app.logger.setLevel(logging.DEBUG)
-
 def generate_random(name = None):
     if name:
         name = name.title()
